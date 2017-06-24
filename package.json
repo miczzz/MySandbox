@@ -1,0 +1,90 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-mqtt-pahojs",
+        "scope": null,
+        "escapedName": "cordova-plugin-mqtt-pahojs",
+        "name": "cordova-plugin-mqtt-pahojs",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\mikkRedux\\My Documents\\Github\\DrummerBaby"
+    ]
+  ],
+  "_from": "cordova-plugin-mqtt-pahojs@latest",
+  "_id": "cordova-plugin-mqtt-pahojs@1.5.7",
+  "_inCache": true,
+  "_location": "/cordova-plugin-mqtt-pahojs",
+  "_nodeVersion": "5.9.1",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/cordova-plugin-mqtt-pahojs-1.5.7.tgz_1490367220591_0.6003639518748969"
+  },
+  "_npmUser": {
+    "name": "aborovsky",
+    "email": "aborovsky@beetoo.me"
+  },
+  "_npmVersion": "3.7.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-mqtt-pahojs",
+    "scope": null,
+    "escapedName": "cordova-plugin-mqtt-pahojs",
+    "name": "cordova-plugin-mqtt-pahojs",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-mqtt-pahojs/-/cordova-plugin-mqtt-pahojs-1.5.7.tgz",
+  "_shasum": "0e29ae8f1bb2c09732551dd104261df2b34884e7",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-mqtt-pahojs",
+  "_where": "C:\\Users\\mikkRedux\\My Documents\\Github\\DrummerBaby",
+  "author": {
+    "name": "Alexander Borovsky"
+  },
+  "cordova_name": "MQTT JavaScript Client",
+  "dependencies": {},
+  "description": "Pure JavaScript MQTT client library. Wrapper for paho.js",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "0e29ae8f1bb2c09732551dd104261df2b34884e7",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-mqtt-pahojs/-/cordova-plugin-mqtt-pahojs-1.5.7.tgz"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "gitHead": "c8a4c77eb634e54a6d87e0ec7a6ef7535ce92beb",
+  "keywords": [
+    "cordova-mqtt"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "aborovsky",
+      "email": "aborovsky@beetoo.me"
+    }
+  ],
+  "name": "cordova-plugin-mqtt-pahojs",
+  "optionalDependencies": {},
+  "platforms": [
+    "ios",
+    "android",
+    "wp8",
+    "windows"
+  ],
+  "readme": "ERROR: No README data found!",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.5.7"
+}
