@@ -1,3 +1,7 @@
+ 	
+	var chosenMessage;
+	var topic;
+
     var client = new Paho.MQTT.Client("diginet.mt.haw-hamburg.de", Number(8000),  "/mqtt", "myclientid_" + parseInt(Math.random() * 100, 10));
  
     // set callback handlers
@@ -20,15 +24,19 @@
     // called when the client connects
     function onConnect() {
       // Once a connection has been made, make a subscription and send a       message.
+	  topic = document.getElementsByName("Topic")[0].value;
 	  alert("Connected!");
-	  client.subscribe("itsdrummerbaby");
-	  client.subscribe("itsdrummerbaby/disconnect");
+	  alert(topic);
+	  client.subscribe("itsdrummerbaby/#");
+	  client.subscribe("itsdrummerbaby/tom1");
      debugger;
       console.log("onConnect");
-      // client.subscribe("outTopic");
-      // message = new Paho.MQTT.Message("Well, hello there!");
-      // message.destinationName = "itsdrummerbaby";
-      // client.send(message);
+      client.subscribe("outTopic");
+	  //client.subscribe(topic);
+      message = new Paho.MQTT.Message("Well, hello there!");
+      message.destinationName = topic;
+      client.send(message);
+	  $('#messages').append('<span> *Send* Topic: ' + message.destinationName + '  | ' + message.payloadString + '</span><br/>');
     }
 
     function doFail(){
@@ -40,22 +48,17 @@
     function onConnectionLost(responseObject) {
       if (responseObject.errorCode !== 0) {
         console.log("onConnectionLost:"+responseObject.errorMessage);
-		alert("Timeout - disconnected. Please reload.");
       }
     }
 
     // called when a message arrives
     client.onMessageArrived = function (message) {
-	  //alert('message incoming');
+	  alert('message incoming');
       console.log("onMessageArrived:"+message.payloadString);
       var msg = message.payloadString;
-	  alert(msg);
-	  if(msg == "disconnect"){
-		client.disconnect();
-		alert("Disconnected");
-	  }
-/* 	  $('#messages').append('<span> Yep </span><br/>');
-	  $('#messages').append('<span> *Received* Topic: '+ msg + '</span><br/>'); */
+	  var msgTopic = message.destinationName;
+	  $('#messages').append('<span> Yep </span><br/>');
+	  $('#messages').append('<span> *Received* Topic: '+ msgTopic + ' Message: ' + msg + '</span><br/>');
       debugger;
     }
 	
@@ -67,5 +70,13 @@
      client.send(message);
  }
  
-
+ 	 var publish2 = function (qos) {
+	 var chosenMessage = document.getElementsByName("Message")[0].value; 
+	 
+     //Send your message (also possible to serialize it as JSON or protobuf or just use a string, no limitations)
+     var message = new Paho.MQTT.Message(chosenMessage);
+     message.destinationName = topic;
+     message.qos = qos;
+     client.send(message);
+ }
  

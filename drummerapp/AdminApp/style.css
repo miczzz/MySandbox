@@ -22,7 +22,7 @@ td {
 	font-size:36px;
 	line-height: 50%;
 	color: black;
-	background-color: darkgrey;
+	background-color: grey;
 }
 
 button{
@@ -32,49 +32,7 @@ button{
 	width: 100%;
 	line-height: 200%;
 	height: 25vh;
-}
 
-img{
-	background-size: 100% 100%;
-	flex-wrap: wrap;
-	align-items: flex-start;
-}
-
-
-#kick-btn{
-	background-image: url('graphics/Kick.png');
-	background-size: 100% 100%;
-	display: inline-block;
-}
-
-#snare-btn{
-	background-image: url('graphics/Snare.png');
-	background-size: 100% 100%;
-	display: inline-block;
-}
-
-#tom1-btn{
-	background-image: url('graphics/Tom_1.png');
-	background-size: 100% 100%;
-	display: inline-block;
-}
-
-#tom2-btn{
-	background: url('graphics/Tom_2.png');
-	background-size: 100% 100%;
-	display: inline-block;
-}
-
-#hihat-btn{
-	background-image: url('graphics/Hi_Hat.png');
-	background-size: 100% 100%;
-	display: inline-block;
-}
-
-#becken-btn{
-	background-size: 100% 100%;
-	background-image: url('graphics/Becken.png');
-	display: inline-block;
 }
 
 #specialtable td{
@@ -98,4 +56,8 @@ img{
 
 #chosen-table{
 	visibility: hidden;
+}
+
+#kick-td{
+
 }

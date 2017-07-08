@@ -14,7 +14,7 @@ $(document).ready(function(){
     if(document.getElementById(name).style.backgroundColor != activeColor){
     document.getElementById(name).style.backgroundColor = activeColor;
     } else {
-    document.getElementById(name).style.backgroundColor = 'darkgrey';
+    document.getElementById(name).style.backgroundColor = 'grey';
   }
 });
 }
@@ -36,9 +36,9 @@ var createTable = function(){
   $(document).ready(function(){
 
     //$("#weiter").empty();
-    $("#weiter").css("visibility", "hidden");
-    $("#alle").css("visibility", "hidden");
-    $("#keine").css("visibility", "hidden");
+    // $("#weiter").css("visibility", "hidden");
+    // $("#alle").css("visibility", "hidden");
+    // $("#keine").css("visibility", "hidden");
   if(document.getElementById('tom2-btn').style.backgroundColor == activeColor){
   $("#tom2-btn").css("visibility", "visible"); 
 } else {
@@ -160,12 +160,12 @@ var activateAll = function(){
 
 var deactivateAll = function(){
   $(document).ready(function(){
-  document.getElementById('becken-btn').style.backgroundColor = 'darkgrey';
-  document.getElementById('tom1-btn').style.backgroundColor = 'darkgrey';
-  document.getElementById('tom2-btn').style.backgroundColor = 'darkgrey';
-  document.getElementById('kick-btn').style.backgroundColor = 'darkgrey';
-  document.getElementById('snare-btn').style.backgroundColor = 'darkgrey';
-  document.getElementById('hihat-btn').style.backgroundColor = 'darkgrey';
+  document.getElementById('becken-btn').style.backgroundColor = 'grey';
+  document.getElementById('tom1-btn').style.backgroundColor = 'grey';
+  document.getElementById('tom2-btn').style.backgroundColor = 'grey';
+  document.getElementById('kick-btn').style.backgroundColor = 'grey';
+  document.getElementById('snare-btn').style.backgroundColor = 'grey';
+  document.getElementById('hihat-btn').style.backgroundColor = 'grey';
 });
 }
 

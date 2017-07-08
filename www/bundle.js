@@ -59,16 +59,17 @@ module.exports = unique
 
 },{}],2:[function(require,module,exports){
 var unique = require('uniq');
-    var client = new Paho.MQTT.Client("m20.cloudmqtt.com", Number(38316), "client_1");
+    var client = new Paho.MQTT.Client("diginet.mt.haw-hamburg.de", Number(8000),  "/mqtt", "client_1");
+	
     // set callback handlers
     client.onConnectionLost = onConnectionLost;
     client.onMessageArrived = onMessageArrived;
 
     // connect the client
     var options = {
-            useSSL: true,
-            userName: "bfxnalwu",
-            password: "9ObBXGyvlQm1",
+            useSSL: false,
+            userName: "haw",
+            password: "schuh+-0",
             cleanSession: true,
             onSuccess:onConnect,
             onFailure:doFail
