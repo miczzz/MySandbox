@@ -6,15 +6,25 @@ var beckenbusy = false;
 var kickbusy = false;
 var snarebusy = false;
 
-var activeColor = 'lightgreen';
+var randomColorR = 255;
+var randomColorG = 0;
+var randomColorB = 0;
+
+var activeColor = 'khaki';
+var choiceMade = false;
 
 var activateChoice = function(name){
 $(document).ready(function(){
+
+	if(choiceMade == false){
     //document.getElementById('becken-btn').style.backgroundColor = activeColor;
     if(document.getElementById(name).style.backgroundColor != activeColor){
     document.getElementById(name).style.backgroundColor = activeColor;
     } else {
-    document.getElementById(name).style.backgroundColor = 'grey';
+    document.getElementById(name).style.backgroundColor = 'darkgrey';
+  }}
+  else {
+	//$("#phone").css("background-color", rgb); 
   }
 });
 }
@@ -158,14 +168,16 @@ var activateAll = function(){
 });
 }
 
+
+
 var deactivateAll = function(){
   $(document).ready(function(){
-  document.getElementById('becken-btn').style.backgroundColor = 'grey';
-  document.getElementById('tom1-btn').style.backgroundColor = 'grey';
-  document.getElementById('tom2-btn').style.backgroundColor = 'grey';
-  document.getElementById('kick-btn').style.backgroundColor = 'grey';
-  document.getElementById('snare-btn').style.backgroundColor = 'grey';
-  document.getElementById('hihat-btn').style.backgroundColor = 'grey';
+  document.getElementById('becken-btn').style.backgroundColor = 'darkgrey';
+  document.getElementById('tom1-btn').style.backgroundColor = 'darkgrey';
+  document.getElementById('tom2-btn').style.backgroundColor = 'darkgrey';
+  document.getElementById('kick-btn').style.backgroundColor = 'darkgrey';
+  document.getElementById('snare-btn').style.backgroundColor = 'darkgrey';
+  document.getElementById('hihat-btn').style.backgroundColor = 'darkgrey';
 });
 }
 
@@ -187,3 +199,6 @@ $(document).ready(function(){
     deactivateAll();
     });
 });
+
+
+
