@@ -47,44 +47,14 @@ Hier erscheinen eingegangene Nachrichten. So have fun!
 
   <table id="specialtable" style="width:50%">
   <tr>
-  <td id="weiter"><button id="weiter-btn" onclick="firstBroker();" type="button">Connect</button></td>
+  <td id="weiter"><button id="weiter-btn" onclick="client.connect(options);" type="button">Connect</button></td>
   </tr>
   </table>
   
   <td id="alle"><button id="alle-btn" onclick="disconnectAll();" type="button">Alle raus</button></td>
   <td id="demo"><button id="demo-btn" onclick="demoPlay();" type="button">DemoPlay</button></td> 
   <td id="stopdemo"><button id="stop-btn" onclick="stopDemo();" type="button">Stop Demo</button></td> 
-  <br>
   
-   <br><br>
-   <p> Custom Beats!! </p>
-   <p> Beats in Hundertstel Sekunden, also 10=1 Sekunde. 0 = wird nicht gespielt </p>
-   <table>
-   <tr>
-   <td><input id="hihatBeats" type="text" value="10" style="width:22px"/></td>
-   <td><p>Hihat</p></td>
-   <td><input id="kickBeats" type="text" value="10" style="width:22px"/></td>
-   <td><p>Kick</p></td>
-   </tr>
-   <tr>
-   <td><input id="tom1Beats" type="text" value="10" style="width:22px"/></td>
-   <td><p>Tom1</p></td>
-   <td><input id="tom2Beats" type="text" value="10" style="width:22px"/></td>
-   <td><p>Tom2</p></td>
-   </tr>
-   <tr>
-   <td><input id="snareBeats" type="text" value="10" style="width:22px"/></td>
-   <td><p>Snare</p></td>
-   <td><input id="beckenBeats" type="text" value="10" style="width:22px"/></td>
-   <td><p>Becken</p></td>
-   </tr>
-  </table>
-  
-  <table id="beatstable">
-  <td id="beatsstart"><button id="beats-btn" onclick="beatsPlay();" type="button">Beats starten</button></td> 
-  <td id="beatsstop"><button id="beatsstop-btn" onclick="stopBeats();" type="button">Beats stoppen</button></td> 
-  </table>
-
 <!--   <tr>
   <td id="Sendbox"><button id="send-btn" onclick="publish2(2);" type="button">Send</button></td>
   </tr>

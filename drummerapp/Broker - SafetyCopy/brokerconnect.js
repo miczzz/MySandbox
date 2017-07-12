@@ -22,11 +22,8 @@
 	var tom2Beat;
 	var beckenBeat;
 	
-	var client;
 	
-	function firstBroker(){
-	
-    client = new Paho.MQTT.Client("diginet.mt.haw-hamburg.de", Number(80), "/ws", "myclientid_" + parseInt(Math.random() * 100, 10));
+    var client = new Paho.MQTT.Client("diginet.mt.haw-hamburg.de", Number(8000), "/mqtt", "myclientid_" + parseInt(Math.random() * 100, 10));
  
     // set callback handlers
     client.onConnectionLost = onConnectionLost;
@@ -34,68 +31,55 @@
 
 
     var options = {
-            useSSL: true,
+            useSSL: false,
             userName: "haw",
             password: "schuh+-0",
             cleanSession: true,
             onSuccess:onConnect,
             onFailure:doFail
           }
+		  
+/* 	    var client = new Paho.MQTT.Client("m20.cloudmqtt.com", Number(38316), "client_1");
+    // set callback handlers
+    client.onConnectionLost = onConnectionLost;
+    //client.onMessageArrived = onMessageArrived;
+
+    // connect the client
+    var options = {
+            useSSL: true,
+            userName: "bfxnalwu",
+            password: "9ObBXGyvlQm1",
+            cleanSession: true,
+            onSuccess:onConnect,
+            onFailure:doFail
+          } */
 
     //client.connect({onSuccess:onConnect});
-    client.connect(options);
+    //client.connect(options);
 
-	}
     // called when the client connects
     function onConnect() {
       // Once a connection has been made, make a subscription and send a       message.
+	  //topic = document.getElementsByName("Topic")[0].value;
 	  alert("Connected!");
+	  //alert(topic);
 	  client.subscribe("itsdrummerbaby/#");
-	  client.subscribe("itsdrummerbaby/tom1");
+	  //client.subscribe("itsdrummerbaby/tom1");
      debugger;
       console.log("onConnect");
       client.subscribe("outTopic");
-	  
 	  //client.subscribe(topic);
       message = new Paho.MQTT.Message("Well, hello there!");
-	  
+      //message.destinationName = topic;
+      //client.send(message);
+	  //$('#messages').append('<span> *Send* Topic: ' + message.destinationName + '  | ' + message.payloadString + '</span><br/>');
     }
-	
-	function altBroker(){
-		client = new Paho.MQTT.Client("m20.cloudmqtt.com", Number(38316), "myclientid_" + parseInt(Math.random() * 100, 10));
-		// set callback handlers
-		client.onConnectionLost = onConnectionLost;
-		//client.onMessageArrived = onMessageArrived;
-
-		// connect the client
-		options = {
-				useSSL: true,
-				userName: "bfxnalwu",
-				password: "9ObBXGyvlQm1",
-				cleanSession: true,
-				onSuccess:onConnect,
-				onFailure:doFail2
-			  }
-			  
-			  client.connect(options);
-		
-		}
 
     function doFail(){
         debugger;
         console.log("dofail");
-		alert("failure to connect - trying different broker now...");
-		altBroker();
-		
+		alert("failure");
     }
-	
-	    function doFail2(){
-        debugger;
-        console.log("dofail");
-		alert("failure to connect...");
-		
-    }
-	
     // called when the client loses its connection
     function onConnectionLost(responseObject) {
       if (responseObject.errorCode !== 0) {
@@ -118,10 +102,8 @@
     }
 	
 	 var publish = function (payload, topic, qos) {
-	 alert("Im publishing");
      //Send your message (also possible to serialize it as JSON or protobuf or just use a string, no limitations)
      var message = new Paho.MQTT.Message(payload);
-	 
      message.destinationName = topic;
      message.qos = qos;
      client.send(message);

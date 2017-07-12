@@ -6,27 +6,16 @@ var beckenbusy = false;
 var kickbusy = false;
 var snarebusy = false;
 
-
-var activeColor = 'Khaki';
-var choiceMade = false;
+var activeColor = 'lightgreen';
 
 var activateChoice = function(name){
 $(document).ready(function(){
-
     //document.getElementById('becken-btn').style.backgroundColor = activeColor;
     if(document.getElementById(name).style.backgroundColor != activeColor){
     document.getElementById(name).style.backgroundColor = activeColor;
     } else {
-    document.getElementById(name).style.backgroundColor = 'darkgrey';
+    document.getElementById(name).style.backgroundColor = 'grey';
   }
-
-});
-}
-
-var weiterMachen = function(name){
-$(document).ready(function(){
- choiceMade = true;
-	
 });
 }
 
@@ -110,10 +99,6 @@ $(document).ready(function(){
     $('#hihat-btn').click(function(){
     activateChoice('hihat-btn');
     });
-	
-	$('#weiter-btn').click(function(){
-    weiterMachen();
-    });
 
     checkAvailability();
 });
@@ -173,16 +158,14 @@ var activateAll = function(){
 });
 }
 
-
-
 var deactivateAll = function(){
   $(document).ready(function(){
-  document.getElementById('becken-btn').style.backgroundColor = 'darkgrey';
-  document.getElementById('tom1-btn').style.backgroundColor = 'darkgrey';
-  document.getElementById('tom2-btn').style.backgroundColor = 'darkgrey';
-  document.getElementById('kick-btn').style.backgroundColor = 'darkgrey';
-  document.getElementById('snare-btn').style.backgroundColor = 'darkgrey';
-  document.getElementById('hihat-btn').style.backgroundColor = 'darkgrey';
+  document.getElementById('becken-btn').style.backgroundColor = 'grey';
+  document.getElementById('tom1-btn').style.backgroundColor = 'grey';
+  document.getElementById('tom2-btn').style.backgroundColor = 'grey';
+  document.getElementById('kick-btn').style.backgroundColor = 'grey';
+  document.getElementById('snare-btn').style.backgroundColor = 'grey';
+  document.getElementById('hihat-btn').style.backgroundColor = 'grey';
 });
 }
 
@@ -204,5 +187,3 @@ $(document).ready(function(){
     deactivateAll();
     });
 });
-
-

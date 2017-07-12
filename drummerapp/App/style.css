@@ -15,30 +15,29 @@
     width: 100%;
     height: 10vh;
 }
-
+button{
+	flex-wrap: wrap;
+	align-items: flex-start;
+	background-color: lightgrey;
+	width: 100%;
+	line-height: 200%;
+	height: 25vh;
+}
 td {
 	text-align:center;
 	/*height:500px;*/
 	font-size:36px;
 	line-height: 50%;
 	color: black;
-	background-color: darkgrey;
+	
 }
 
-button{
-	flex-wrap: wrap;
-	align-items: flex-start;
-	background-color: grey;
-	width: 100%;
-	line-height: 200%;
-	height: 25vh;
+body {
+	background-color: white;
+
 }
 
-img{
-	background-size: 100% 100%;
-	flex-wrap: wrap;
-	align-items: flex-start;
-}
+
 
 
 #kick-btn{
@@ -60,13 +59,13 @@ img{
 }
 
 #tom2-btn{
-	background: url('graphics/Tom_2.png');
+	background-image: url('graphics/Tom_2.png');
 	background-size: 100% 100%;
 	display: inline-block;
 }
 
 #hihat-btn{
-	background-image: url('graphics/Hi_Hat.png');
+	background-image: url('graphics/Hi_Hat.png'), url('https://miczzz.github.io/MySandbox/drummerapp/App/graphics/Hi_Hat.png');
 	background-size: 100% 100%;
 	display: inline-block;
 }
@@ -84,13 +83,11 @@ img{
 }
 
 #specialtable button{
-	background-color: orange;
+	background-color: darkgrey;
+	color: black;
 	height: 7vh;
 }
 
-#tom3-btn{
-	visibility: hidden;
-}
 
 #weiter-btn{
 	background-color: yellow;

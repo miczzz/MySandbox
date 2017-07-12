@@ -24,12 +24,12 @@
 	  alert("Connected!");
 	  client.subscribe("itsdrummerbaby");
      debugger;
-      console.log("onConnect");
+/*       console.log("onConnect");
       client.subscribe("outTopic");
       message = new Paho.MQTT.Message("Well, hello there!");
       message.destinationName = "itsdrummerbaby";
       client.send(message);
-	  $('#messages').append('<span> *Send* Topic: ' + message.destinationName + '  | ' + message.payloadString + '</span><br/>');
+	  $('#messages').append('<span> *Send* Topic: ' + message.destinationName + '  | ' + message.payloadString + '</span><br/>'); */
     }
 
     function doFail(){
@@ -63,11 +63,18 @@
  }
  
   var disconnectAll = function () {
-	 alert("disconnecting");
-     //Send your message (also possible to serialize it as JSON or protobuf or just use a string, no limitations)
+	 //alert("disconnecting");
+
      var message = new Paho.MQTT.Message("disconnect");
-	 var disconnectTopic = "itsdrummerbaby/disconnect";
-     message.destinationName = disconnectTopic;
-     message.qos = qos;
+	 //var disconnectTopic = "itsdrummerbaby/disconnect";
+     //message.destinationName = disconnectTopic;
+	 message.destinationName = "itsdrummerbaby";
+     message.qos = 2;
      client.send(message);
  }
+ 
+ /* 
+      var message = new Paho.MQTT.Message(payload);
+     message.destinationName = topic;
+     message.qos = qos;
+     client.send(message); */
